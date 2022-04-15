@@ -124,11 +124,11 @@ JOIN Orders AS O ON U.Id=O.UserId
 
 
 CREATE PROCEDURE USP_CREATE_NEW_USER
-@Id INT PRIMARY KEY IDENTITY,
-@Name NVARCHAR(30) NOT NULL,
-@Surname NVARCHAR(30) NOT NULL,
-@Email NVARCHAR(100) NOT NULL,
-@Address NVARCHAR(100) NOT NULL,
+@Id INT,
+@Name NVARCHAR(30),
+@Surname NVARCHAR(30),
+@Email NVARCHAR(100),
+@Address NVARCHAR(100),
 AS
 INSERT INTO Users (Name,Surname,Email,Address)
 VALUES('@Name','@Surname','@Email','@Address')
